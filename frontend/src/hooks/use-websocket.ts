@@ -11,6 +11,7 @@ export function useWebSocket(url: string) {
   const reconnectTimer = useRef<NodeJS.Timeout | null>(null);
 
   const connect = useCallback(() => {
+    if (!url) return;
     // Clean up previous connection
     if (wsRef.current) {
       wsRef.current.close();

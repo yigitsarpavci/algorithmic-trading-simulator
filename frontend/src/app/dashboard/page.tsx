@@ -17,7 +17,7 @@ import {
   Terminal 
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { api } from "@/lib/api";
+import { api, getWsBaseUrl } from "@/lib/api";
 import { useWebSocket } from "@/hooks/use-websocket";
 import { cn } from "@/lib/utils";
 
@@ -52,7 +52,12 @@ export default function DashboardPage() {
   const [riskSettings, setRiskSettings] = useState({ leverage: 15, risk_per_trade: 0.05 });
   const prevBalanceRef = useRef<number | null>(null);
 
-  const { lastMessage, isConnected } = useWebSocket("ws://localhost:8000/api/v1/ws/");
+  const [wsUrl, setWsUrl] = useState<string>("");
+  const { lastMessage, isConnected } = useWebSocket(wsUrl);
+
+  useEffect(() => {
+    setWsUrl(getWsBaseUrl());
+  }, []);
 
   useEffect(() => {
     if (!lastMessage) return;

@@ -2,10 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { useWebSocket } from "@/hooks/use-websocket";
+import { getWsBaseUrl } from "@/lib/api";
 
 export function TickerTape() {
   const [prices, setPrices] = useState<Record<string, any>>({});
-  const { lastMessage } = useWebSocket("ws://localhost:8000/api/v1/ws/");
+  const [wsUrl, setWsUrl] = useState<string>("");
+  const { lastMessage } = useWebSocket(wsUrl);
+
+  useEffect(() => {
+    setWsUrl(getWsBaseUrl());
+  }, []);
 
   useEffect(() => {
     if (lastMessage?.type === "PRICE_BATCH_UPDATE") {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { api } from "@/lib/api";
+import { api, getWsBaseUrl } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { SectionHeader, SignalBadge, PriceChange, ConfidenceBadge } from "@/components/shared";
 import { Input } from "@/components/ui/input";
@@ -59,7 +59,12 @@ export default function WatchlistPage() {
   const [newTicker, setNewTicker] = useState("");
   const [newPriority, setNewPriority] = useState<"High" | "Medium" | "Low">("Medium");
   
-  const { lastMessage } = useWebSocket("ws://localhost:8000/api/v1/ws/");
+  const [wsUrl, setWsUrl] = useState<string>("");
+  const { lastMessage } = useWebSocket(wsUrl);
+
+  useEffect(() => {
+    setWsUrl(getWsBaseUrl());
+  }, []);
 
   useEffect(() => {
     if (lastMessage) {
@@ -141,10 +146,13 @@ export default function WatchlistPage() {
 
   const removeItem = async (id: string) => {
     try {
+      // Optimistically remove from UI
+      setItems(prev => prev.filter(i => i.id !== id));
       await api.delete(`/watchlist/${id}`);
-      setItems(items.filter(i => i.id !== id));
     } catch (error) {
       console.error("Failed to remove ticker:", error);
+      // Re-fetch if it failed to keep UI in sync with server
+      fetchWatchlist();
     }
   };
 
