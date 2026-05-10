@@ -1,0 +1,823 @@
+INFO:     Started server process [27679]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49953 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     connection open
+INFO:     127.0.0.1:49977 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:49971 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50118 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49972 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49970 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49977 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49971 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50385 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50386 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50384 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50385 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50404 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50403 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50405 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50404 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50425 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50423 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     connection closed
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['ETH-USD']: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['BTC-USD']: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['SOL-USD']: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+3 Failed downloads:
+['ATOM-USD', 'BTC-USD', 'SOL-USD']: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['XRP-USD']: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+
+7 Failed downloads:
+['AVAX-USD', 'ADA-USD', 'APE-USD', 'LTC-USD', 'ETH-USD', 'DOT-USD', 'LINK-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['LINK-USD']: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+
+5 Failed downloads:
+['LTC-USD', 'APE-USD', 'AVAX-USD', 'ETH-USD', 'ADA-USD']: possibly delisted; no price data found  (period=1d)
+Failed to perform, curl: (16) . See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+
+5 Failed downloads:
+['LTC-USD', 'APE-USD', 'AVAX-USD', 'ADA-USD', 'ETH-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+
+8 Failed downloads:
+['LINK-USD', 'BTC-USD', 'DOGE-USD', 'ATOM-USD', 'XRP-USD', 'SOL-USD', 'SHIB-USD', 'DOT-USD']: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+8 Failed downloads:
+['ATOM-USD', 'BTC-USD', 'DOT-USD', 'SHIB-USD', 'LINK-USD', 'XRP-USD', 'DOGE-USD', 'SOL-USD']: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+8 Failed downloads:
+['BTC-USD', 'LINK-USD', 'ATOM-USD', 'SHIB-USD', 'XRP-USD', 'DOT-USD', 'DOGE-USD', 'SOL-USD']: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+8 Failed downloads:
+['XRP-USD', 'LINK-USD', 'SHIB-USD', 'DOGE-USD', 'ATOM-USD', 'DOT-USD', 'BTC-USD', 'SOL-USD']: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+
+5 Failed downloads:
+['ETH-USD', 'AVAX-USD', 'ADA-USD', 'LTC-USD', 'APE-USD']: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['LTC-USD']: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['SOL-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+
+8 Failed downloads:
+['LINK-USD', 'DOT-USD', 'ATOM-USD', 'SOL-USD', 'SHIB-USD', 'DOGE-USD', 'XRP-USD', 'BTC-USD']: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+
+13 Failed downloads:
+['SHIB-USD', 'LINK-USD', 'ATOM-USD', 'XRP-USD', 'DOGE-USD', 'DOT-USD', 'BTC-USD', 'ETH-USD', 'APE-USD', 'SOL-USD', 'ADA-USD', 'LTC-USD', 'AVAX-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+
+13 Failed downloads:
+['LINK-USD', 'SHIB-USD', 'DOGE-USD', 'ATOM-USD', 'ETH-USD', 'SOL-USD', 'BTC-USD', 'DOT-USD', 'ADA-USD', 'XRP-USD', 'AVAX-USD', 'APE-USD', 'LTC-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+
+13 Failed downloads:
+['LINK-USD', 'SHIB-USD', 'SOL-USD', 'BTC-USD', 'APE-USD', 'ETH-USD', 'XRP-USD', 'ATOM-USD', 'AVAX-USD', 'DOGE-USD', 'DOT-USD', 'LTC-USD', 'ADA-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+
+13 Failed downloads:
+['LINK-USD', 'SHIB-USD', 'DOGE-USD', 'ATOM-USD', 'AVAX-USD', 'APE-USD', 'XRP-USD', 'ETH-USD', 'SOL-USD', 'DOT-USD', 'ADA-USD', 'LTC-USD', 'BTC-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$ETH-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+$AVAX-USD: possibly delisted; no price data found  (period=1d)
+$LTC-USD: possibly delisted; no price data found  (period=1d)
+$ADA-USD: possibly delisted; no price data found  (period=1d)
+$APE-USD: possibly delisted; no price data found  (period=1d)
+
+13 Failed downloads:
+['LINK-USD', 'DOGE-USD', 'ATOM-USD', 'BTC-USD', 'DOT-USD', 'SOL-USD', 'ETH-USD', 'XRP-USD', 'SHIB-USD', 'AVAX-USD', 'LTC-USD', 'ADA-USD', 'APE-USD']: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+
+1 Failed download:
+['DOT-USD']: possibly delisted; no price data found  (period=1d)
+$LINK-USD: possibly delisted; no price data found  (period=1d)
+$SOL-USD: possibly delisted; no price data found  (period=1d)
+$DOT-USD: possibly delisted; no price data found  (period=1d)
+$XRP-USD: possibly delisted; no price data found  (period=1d)
+$DOGE-USD: possibly delisted; no price data found  (period=1d)
+$BTC-USD: possibly delisted; no price data found  (period=1d)
+$ATOM-USD: possibly delisted; no price data found  (period=1d)
+$SHIB-USD: possibly delisted; no price data found  (period=1d)
+
+8 Failed downloads:
+['LINK-USD', 'SOL-USD', 'DOT-USD', 'XRP-USD', 'DOGE-USD', 'BTC-USD', 'ATOM-USD', 'SHIB-USD']: possibly delisted; no price data found  (period=1d)
+INFO:     127.0.0.1:51420 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51422 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51424 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51425 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51427 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     connection closed
+INFO:     127.0.0.1:51423 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51423 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51427 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51427 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51424 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51423 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51426 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51421 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51422 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51430 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51424 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51423 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51426 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51427 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51463 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51464 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51463 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51462 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51482 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51483 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51481 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51482 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51502 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51501 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51500 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51500 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51978 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51979 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51977 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51979 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51977 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51979 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51979 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51978 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52019 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52020 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52022 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52023 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     connection closed
+INFO:     127.0.0.1:52018 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52024 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52020 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52026 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52019 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52025 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     connection closed
+INFO:     127.0.0.1:52029 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52023 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52018 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52020 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52026 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52018 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52023 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52020 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52026 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52026 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52018 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52023 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52020 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52238 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52239 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52237 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52239 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52258 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52256 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52257 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52256 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52257 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52256 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52257 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52256 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52257 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52256 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52258 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52431 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52431 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52431 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52430 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52431 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52431 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52429 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52431 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52431 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52429 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52431 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52429 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52540 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52541 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52539 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52540 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52559 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52560 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52558 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52560 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52579 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52580 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52578 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52580 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52600 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52598 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52600 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52600 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52598 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52600 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52600 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     connection closed
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52694 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52693 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52598 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52600 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52720 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52719 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52720 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52718 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52720 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52718 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52720 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52719 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52758 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52757 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52757 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52758 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52791 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52792 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52791 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52790 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52791 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52790 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52791 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52792 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52826 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52824 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52826 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52826 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52825 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52826 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52826 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52825 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52826 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52826 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52824 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52944 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52944 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52945 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52944 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/paper-trades HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/paper-trades/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/paper-trades/summary HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:52945 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52944 - "GET /api/v1/settings HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52943 - "GET /api/v1/user/portfolio HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52943 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/settings/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53176 - "WebSocket /api/v1/ws/" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53191 - "OPTIONS /api/v1/settings/update HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53192 - "OPTIONS /api/v1/user/portfolio/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53191 - "POST /api/v1/settings/update HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53192 - "POST /api/v1/user/portfolio/reset HTTP/1.1" 200 OK
