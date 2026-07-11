@@ -1,4 +1,4 @@
-# AlphaTrigger AI: Autonomous HFT Engine & Real-Time Trading Terminal
+# AlphaTrigger AI: Autonomous HFT Engine and Real-Time Trading Terminal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
@@ -11,11 +11,11 @@ An autonomous, high-frequency trading simulation engine with a real-time WebSock
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 - [Problem Statement](#problem-statement)
 - [Key Features](#key-features)
 - [Tech Stack](#tech-stack)
-- [Architecture & Diagrams](#architecture--diagrams)
+- [Architecture and Diagrams](#architecture-and-diagrams)
 - [Core Engines Deep Dive](#core-engines-deep-dive)
 - [API Overview](#api-overview)
 - [Local Setup Instructions](#local-setup-instructions)
@@ -24,7 +24,7 @@ An autonomous, high-frequency trading simulation engine with a real-time WebSock
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 
 Most retail "algo trading" tools are either opaque black boxes or simplistic indicators that ignore execution costs, slippage, and risk management. Professional quantitative trading systems operate on principles that are rarely exposed to the educational community: statistical edge detection, volatility-normalized position sizing, and state-machine-based trade lifecycle management.
 
@@ -32,40 +32,40 @@ Most retail "algo trading" tools are either opaque black boxes or simplistic ind
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **V8 Risk-First Autonomous Engine:** A fully autonomous trading orchestrator running on a 2-second HFT cycle. It scans a curated 5-coin crypto universe, scores entry opportunities on a 6-factor system, and executes paper trades with zero human intervention.
 - **Z-Score Mean Reversion:** Entries are triggered by statistical deviation from a 120-tick rolling mean, ensuring trades are taken only at high-probability reversion points.
 - **Dynamic Volatility-Adjusted Sizing:** Stop-loss and take-profit levels are calculated from real-time price volatility (rate-of-change standard deviation), not fixed percentages.
-- **4-State Exit Machine:** A deterministic state machine manages trade exits through Hard Stop → No-Follow-Through → Break-Even Stop → Trailing Stop → Take Profit → Time Stop.
+- **4-State Exit Machine:** A deterministic state machine manages trade exits through Hard Stop, No-Follow-Through, Break-Even Stop, Trailing Stop, Take Profit, and Time Stop.
 - **Real-Time WebSocket Terminal:** A premium dark-mode dashboard with live price streaming, active position tracking, execution tape, and performance analytics — all driven by sub-second WebSocket broadcasts.
 - **Realistic Execution Simulation:** Every paper trade includes randomized slippage, entry/exit commission fees, and leveraged PnL calculations.
 - **Dynamic Watchlist Management:** Add/remove assets with live price, change%, Relative Strength, and signal data streamed via WebSocket.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
-### **Frontend**
+### Frontend
 - **Framework:** Next.js 14 (App Router), React 18
 - **Styling:** Custom CSS Design System (Dark Terminal Aesthetic)
-- **Real-Time:** Native WebSocket client with auto-reconnect & exponential backoff
+- **Real-Time:** Native WebSocket client with auto-reconnect and exponential backoff
 - **Icons:** Lucide-React
 
-### **Backend**
+### Backend
 - **Framework:** FastAPI (Python 3.11+)
 - **Database:** SQLite (development) / PostgreSQL (production-ready via Docker)
 - **ORM:** SQLAlchemy 2.0, Pydantic v2
 - **Market Data:** yfinance (batch async fetching)
 - **Orchestration:** `asyncio` background task with 2-second HFT cycle
 
-### **DevOps & Infrastructure**
-- **Containerization:** Docker & Docker Compose
+### DevOps and Infrastructure
+- **Containerization:** Docker and Docker Compose
 - **Data Pipeline:** In-memory ring buffers (120-tick) for statistical computation
 
 ---
 
-## 🏗 Architecture & Diagrams
+## Architecture and Diagrams
 
 ```mermaid
 graph TD
@@ -90,7 +90,7 @@ graph TD
 
 ---
 
-## 🧠 Core Engines Deep Dive
+## Core Engines Deep Dive
 
 ### 1. V8 Entry Scoring System (6-Factor)
 
@@ -128,7 +128,7 @@ Notional    = Risk USD / SL%
 
 ---
 
-## 🔌 API Overview
+## API Overview
 
 The REST API is documented via Swagger UI at `/docs`.
 
@@ -139,7 +139,7 @@ The REST API is documented via Swagger UI at `/docs`.
 | `DELETE` | `/api/v1/watchlist/{id}` | Remove a ticker from watchlist |
 | `GET` | `/api/v1/paper-trades/` | List paper trades (last 100) |
 | `GET` | `/api/v1/paper-trades/summary` | Aggregate performance metrics |
-| `GET` | `/api/v1/user/portfolio` | Current portfolio value & liquidity |
+| `GET` | `/api/v1/user/portfolio` | Current portfolio value and liquidity |
 | `GET` | `/api/v1/signals/` | List generated signals |
 | `GET` | `/api/v1/settings/` | Current engine configuration |
 | `WS` | `/api/v1/ws/` | Real-time WebSocket stream |
@@ -151,7 +151,7 @@ The REST API is documented via Swagger UI at `/docs`.
 
 ---
 
-## 🚀 Local Setup Instructions
+## Local Setup Instructions
 
 ### Prerequisites
 - Python 3.11+
@@ -182,7 +182,7 @@ docker-compose up --build
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
 - **Real-Time Systems Architecture:** Designing a WebSocket-driven data pipeline that broadcasts market updates at sub-second intervals while maintaining state consistency across multiple connected clients.
 - **Statistical Trading Systems:** Implementing Z-Score mean reversion with rolling buffers, understanding why naive technical indicators fail without volatility normalization.
@@ -192,7 +192,7 @@ docker-compose up --build
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 - [ ] **Multi-Exchange Connectors:** Integrate Binance/Coinbase WebSocket feeds for true sub-second price data.
 - [ ] **Backtesting Engine:** Run the V8 strategy against multi-year historical data with walk-forward optimization.
@@ -203,10 +203,10 @@ docker-compose up --build
 
 ---
 
-## ⚠️ Legal Disclaimer
+## Legal Disclaimer
 
 AlphaTrigger AI is a **simulation-only** research and educational tool. It does not execute real trades, does not connect to real brokerage accounts, and does not constitute financial or investment advice. Market data may be delayed. Trading involves significant risk of loss.
 
 ---
 
-© 2026 AlphaTrigger AI. Engineered by Yiğit Sarp Avcı.
+© 2026 AlphaTrigger AI. Engineered by Yigit Sarp Avci.
