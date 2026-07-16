@@ -32,6 +32,17 @@ Most retail "algo trading" tools are either opaque black boxes or simplistic ind
 
 ---
 
+
+## Business Value & Target Audience
+
+- **Target Audience:** Quantitative (quant) traders and crypto enthusiasts who suffer from emotion-driven trading errors in highly volatile markets.
+- **Value Proposition:** An emotionless, fully automated trading bot utilizing Z-Score mean reversion algorithms and volatility-adjusted position sizing, ensuring strict adherence to risk management parameters.
+
+## Monetization Strategy
+
+- **Freemium:** Free access to historical backtesting and paper trading simulation.
+- **Premium ($29.99/mo):** Direct API integration with real exchanges (Binance, Alpaca) for live trade execution, plus sub-second WebSocket market data access.
+
 ## Key Features
 
 - **V8 Risk-First Autonomous Engine:** A fully autonomous trading orchestrator running on a 2-second HFT cycle. It scans a curated 5-coin crypto universe, scores entry opportunities on a 6-factor system, and executes paper trades with zero human intervention.
@@ -181,6 +192,16 @@ docker-compose up --build
 ```
 
 ---
+
+
+### Environment Variables Configuration
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `BINANCE_API_KEY` | Optional | Required for live exchange execution |
+| `BINANCE_SECRET` | Optional | Encrypted secret for trade signing |
+| `DATABASE_URL` | ✅ | SQLite or PostgreSQL connection string |
+| `NEXT_PUBLIC_WS_URL` | ✅ | Backend WebSocket endpoint for Next.js |
 
 ## What I Learned
 
