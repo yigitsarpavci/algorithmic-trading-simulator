@@ -1,11 +1,11 @@
-# AlphaTrigger AI: Autonomous HFT Engine and Real-Time Trading Terminal
+# Algorithmic Trading Simulator: Quantitative Terminal & Execution Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 
-An autonomous, high-frequency trading simulation engine with a real-time WebSocket-driven terminal UI. AlphaTrigger executes a **V8 Risk-First** strategy: a statistically-driven, Z-Score mean reversion system with dynamic volatility-adjusted position sizing, trailing stop management, and a multi-factor entry scoring engine — all operating on a 2-second HFT cycle.
+A real-time algorithmic trading simulation engine with a WebSocket-driven terminal UI. AlphaTrigger executes a **V8 Risk-First** quantitative strategy: a statistically-driven Z-Score mean reversion model with dynamic volatility-adjusted position sizing, trailing stop management, and a multi-factor entry scoring engine operating on a 2-second simulation cycle.
 
 > **Disclaimer:** This project is built strictly for educational and portfolio demonstration purposes. It does not execute real trades, connect to real brokerage accounts, or provide financial advice.
 
