@@ -1,6 +1,6 @@
 # Algorithmic Trading Simulator: Quantitative Terminal & Execution Engine
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -230,4 +230,18 @@ AlphaTrigger AI is a **simulation-only** research and educational tool. It does 
 
 ---
 
-© 2026 AlphaTrigger AI. Engineered by Yigit Sarp Avci.
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Author
+
+**Yiğit Sarp Avcı**  
+Computer Engineering Student @ Boğaziçi University  
+[GitHub Profile](https://github.com/yigitsarpavci) · [LinkedIn](https://www.linkedin.com/in/yigitsarpavci)
+
+---
+
+*Developed by Yiğit Sarp Avcı*
