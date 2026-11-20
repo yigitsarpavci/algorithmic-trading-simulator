@@ -13,6 +13,10 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "monthly"
+    # Minor/patch updates arrive automatically; major versions are migrations done deliberately.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 3
     groups:
       all-updates:
