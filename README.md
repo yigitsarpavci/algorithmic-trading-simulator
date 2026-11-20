@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
-[![Next.js](https://img.shields.io/badge/Next.js_14-black?logo=next.js&logoColor=white)](https://nextjs.org)
+[![Next.js](https://img.shields.io/badge/Next.js_16-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 
 A real-time algorithmic trading simulation engine with a WebSocket-driven terminal UI. AlphaTrigger executes a **V8 Risk-First** quantitative strategy: a statistically-driven Z-Score mean reversion model with dynamic volatility-adjusted position sizing, trailing stop management, and a multi-factor entry scoring engine operating on a 2-second simulation cycle.
@@ -60,7 +60,7 @@ Most retail "algo trading" tools are either opaque black boxes or simplistic ind
 ## Tech Stack
 
 ### Frontend
-- **Framework:** Next.js 14 (App Router), React 18
+- **Framework:** Next.js 16 (App Router), React 19, Tailwind CSS 4
 - **Styling:** Custom CSS Design System (Dark Terminal Aesthetic)
 - **Real-Time:** Native WebSocket client with auto-reconnect and exponential backoff
 - **Icons:** Lucide-React
