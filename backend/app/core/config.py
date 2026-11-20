@@ -12,12 +12,19 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = "alphatrigger"
     DATABASE_URL: Optional[str] = None
 
+    # CORS: comma-separated list of allowed browser origins
+    FRONTEND_CORS_ORIGINS: str = "http://localhost:3000,http://127.0.0.1:3000"
+
     # Market Data
     MARKET_DATA_PROVIDER: str = "mock" # mock or yfinance
 
     class Config:
         env_file = ".env"
         case_sensitive = True
+
+    @property
+    def cors_origins(self) -> list[str]:
+        return [o.strip() for o in self.FRONTEND_CORS_ORIGINS.split(",") if o.strip()]
 
     def get_database_url(self) -> str:
         if self.DATABASE_URL:
