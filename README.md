@@ -1,5 +1,6 @@
 # Algorithmic Trading Simulator: Quantitative Terminal & Execution Engine
 
+[![Security: CodeQL | Dependabot](https://img.shields.io/badge/Security-CodeQL%20%7C%20Dependabot%20%7C%20Secret%20scanning-success?logo=github)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/security)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
