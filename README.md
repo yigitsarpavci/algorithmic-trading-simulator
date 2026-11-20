@@ -14,6 +14,19 @@ A real-time algorithmic trading simulation engine with a WebSocket-driven termin
 
 ---
 
+## Quick Start
+
+```bash
+# backend (SQLite, no external services needed)
+cd backend && python -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+DATABASE_URL=sqlite:///./alphatrigger.db uvicorn app.main:app --port 8000
+
+# frontend, in a second terminal
+cd frontend && npm ci && npm run dev   # http://localhost:3000
+```
+
+---
+
 ## Table of Contents
 - [Problem Statement](#problem-statement)
 - [Key Features](#key-features)
