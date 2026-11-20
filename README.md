@@ -3,6 +3,7 @@
 [![Security: CodeQL | Dependabot](https://img.shields.io/badge/Security-CodeQL%20%7C%20Dependabot%20%7C%20Secret%20scanning-success?logo=github)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/security)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-59%25%20services-yellowgreen)](#testing)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js_16-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -210,10 +211,10 @@ docker-compose up --build
 ```bash
 cd backend
 pip install -r requirements.txt pytest
-PYTHONPATH=. python -m pytest tests -q
+PYTHONPATH=. python -m pytest tests -q --cov=app/services
 ```
 
-The suite covers position sizing, risk/reward validation, position-size caps, and the SMA, RSI, ATR, VWAP and relative-volume indicators. GitHub Actions runs it together with a production Next.js build on every push.
+The 80-test suite covers position sizing and risk/reward validation, the indicators, the 6-factor signal scoring engine and its signal bands, the market-regime classifier, the risk-first exit state machine (hard stop, no-follow-through, break-even, trailing stop, target, 300s time stop) against an in-memory database, the global loss/cooldown limits and two strategies. Coverage of `app/services` is 59% (the paper-trading engine alone is 87%) and CI fails below 55%. GitHub Actions runs it together with a production Next.js build on every push.
 
 ## What I Learned
 
