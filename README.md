@@ -1,6 +1,7 @@
 # Algorithmic Trading Simulator: Quantitative Terminal & Execution Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -202,6 +203,16 @@ docker-compose up --build
 | `BINANCE_SECRET` | Optional | Encrypted secret for trade signing |
 | `DATABASE_URL` | ✅ | SQLite or PostgreSQL connection string |
 | `NEXT_PUBLIC_WS_URL` | ✅ | Backend WebSocket endpoint for Next.js |
+
+## Testing
+
+```bash
+cd backend
+pip install -r requirements.txt pytest
+PYTHONPATH=. python -m pytest tests -q
+```
+
+The suite covers position sizing, risk/reward validation, position-size caps, and the SMA, RSI, ATR, VWAP and relative-volume indicators. GitHub Actions runs it together with a production Next.js build on every push.
 
 ## What I Learned
 

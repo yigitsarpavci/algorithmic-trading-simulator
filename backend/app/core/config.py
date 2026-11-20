@@ -12,9 +12,6 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = "alphatrigger"
     DATABASE_URL: Optional[str] = None
 
-    # Redis
-    REDIS_URL: str = "redis://localhost:6379/0"
-
     # Market Data
     MARKET_DATA_PROVIDER: str = "mock" # mock or yfinance
 
