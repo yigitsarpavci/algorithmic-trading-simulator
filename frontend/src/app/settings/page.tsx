@@ -1,32 +1,27 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { 
-  SectionHeader, 
-  RiskWarningBox 
-} from "@/components/shared";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
-import { 
-  ShieldCheck, 
-  Wallet, 
-  Settings2, 
-  Calculator, 
+import {
+  ShieldCheck,
+  Settings2,
+  Calculator,
   AlertTriangle,
   Zap,
   Percent,
-  RefreshCcw,
   Timer,
   Check,
   Loader2
@@ -161,7 +156,7 @@ export default function RiskSettingsPage() {
               {!isManualMode && (
                 <div className="mt-4 p-3 bg-primary/10 border border-primary/20 rounded-md">
                   <p className="text-[11px] font-medium text-primary/80">
-                    System presets are active. To manually override these parameters, please select "Manual Custom" from the profile dropdown.
+                    System presets are active. To manually override these parameters, please select &quot;Manual Custom&quot; from the profile dropdown.
                   </p>
                 </div>
               )}

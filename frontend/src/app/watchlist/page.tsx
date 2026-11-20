@@ -1,37 +1,50 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { api, getWsBaseUrl } from "@/lib/api";
+import { useState, useEffect, useCallback } from "react";
+import { api } from "@/lib/api";
+import { useWsUrl } from "@/hooks/use-ws-url";
+import type { WsMessage } from "@/types/ws";
 import { cn } from "@/lib/utils";
-import { SectionHeader, SignalBadge, PriceChange, ConfidenceBadge } from "@/components/shared";
+import { SectionHeader, SignalBadge, PriceChange } from "@/components/shared";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
 } from "@/components/ui/table";
-import { 
-  Plus, 
-  Trash2, 
-  Search, 
-  TrendingUp, 
-  BarChart2, 
-  ArrowRightLeft,
-  LayoutGrid,
-  List as ListIcon
+import {
+  Plus,
+  Trash2,
+  Search
 } from "lucide-react";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
+
+import { useWebSocket } from "@/hooks/use-websocket";
+
+interface ApiWatchlistItem {
+  id?: number | string;
+  ticker?: string;
+  asset_type?: string;
+  type?: string;
+  priority?: string;
+  price?: number;
+  change?: number;
+  volume?: string;
+  rel_strength?: number;
+  relStrength?: number;
+  signal?: string;
+}
 
 interface WatchlistItem {
   id: string;
@@ -45,34 +58,17 @@ interface WatchlistItem {
   signal: "BUY" | "WAIT" | "AVOID" | "STRONG_BUY" | "BUY_IF_TRIGGER";
 }
 
-const mockWatchlist = [
-  { id: "1", ticker: "MSFT", type: "Stock", priority: "High", price: 415.20, change: 1.2, volume: "12M", relStrength: 1.05, signal: "BUY" },
-  { id: "2", ticker: "NVDA", type: "Stock", priority: "High", price: 124.50, change: 2.4, volume: "85M", relStrength: 1.42, signal: "STRONG_BUY" },
-  { id: "3", ticker: "AAPL", type: "Stock", priority: "Medium", price: 220.10, change: -0.5, volume: "45M", relStrength: 0.98, signal: "WAIT" },
-];
-
-import { useWebSocket } from "@/hooks/use-websocket";
 
 export default function WatchlistPage() {
   const [items, setItems] = useState<WatchlistItem[]>([]);
-  const [loading, setLoading] = useState(true);
   const [newTicker, setNewTicker] = useState("");
   const [newPriority, setNewPriority] = useState<"High" | "Medium" | "Low">("Medium");
   
-  const [wsUrl, setWsUrl] = useState<string>("");
-  const { lastMessage } = useWebSocket(wsUrl);
+  const wsUrl = useWsUrl();
 
-  useEffect(() => {
-    setWsUrl(getWsBaseUrl());
-  }, []);
-
-  useEffect(() => {
-    if (lastMessage) {
-      console.log("WS Message Received:", lastMessage.type);
-    }
-    if (lastMessage?.type === "PRICE_BATCH_UPDATE") {
-      const quotes = lastMessage.payload;
-      console.log("Updating items with quotes:", Object.keys(quotes));
+  const handleMessage = useCallback((message: WsMessage) => {
+    if (message.type === "PRICE_BATCH_UPDATE") {
+      const quotes = message.payload;
       setItems(prev => prev.map(item => {
         const q = quotes[item.ticker];
         if (q) {
@@ -81,51 +77,55 @@ export default function WatchlistPage() {
             price: q.price !== undefined ? q.price : item.price, 
             change: q.change !== undefined ? q.change : item.change,
             relStrength: q.rs !== undefined ? q.rs : item.relStrength,
-            signal: q.signal !== undefined ? q.signal : item.signal
+            signal: (q.signal !== undefined ? q.signal : item.signal) as WatchlistItem["signal"]
           };
         }
         return item;
       }));
     }
-    if (lastMessage?.type === "SIGNAL_GENERATED") {
+    if (message.type === "SIGNAL_GENERATED") {
       setItems(prev => prev.map(item => 
-        item.ticker === lastMessage.payload.ticker 
-          ? { ...item, signal: lastMessage.payload.type || "BUY" } 
+        item.ticker === message.payload.ticker 
+          ? { ...item, signal: (message.payload.type || "BUY") as WatchlistItem["signal"] } 
           : item
       ));
     }
-  }, [lastMessage]);
+  }, []);
 
-  const fetchWatchlist = async () => {
-    try {
-      setLoading(true);
-      const data = await api.get("/watchlist/");
-      if (data && data.length > 0) {
-        const mapped: WatchlistItem[] = data.map((item: any) => ({
-          id: String(item.id ?? Math.random()),
-          ticker: item.ticker ?? "???",
-          type: (item.asset_type ?? item.type ?? "Stock") as "Stock" | "ETF",
-          priority: (item.priority ?? "Medium") as "High" | "Medium" | "Low",
-          price: Number(item.price ?? 0),
-          change: Number(item.change ?? 0),
-          volume: item.volume ?? "-",
-          relStrength: Number(item.rel_strength ?? item.relStrength ?? 1.0),
-          signal: (item.signal ?? "WAIT") as WatchlistItem["signal"],
-        }));
-        setItems(mapped);
-      } else {
-        setItems([]);
-      }
-    } catch (error) {
-      setItems([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+  useWebSocket(wsUrl, handleMessage);
+
+  const [refreshKey, setRefreshKey] = useState(0);
+  const fetchWatchlist = useCallback(() => setRefreshKey((k) => k + 1), []);
 
   useEffect(() => {
-    fetchWatchlist();
-  }, []);
+    let active = true;
+    (api.get("/watchlist/") as Promise<ApiWatchlistItem[] | null>)
+      .then((data) => {
+        if (!active) return;
+        if (data && data.length > 0) {
+          const mapped: WatchlistItem[] = data.map((item) => ({
+            id: String(item.id ?? Math.random()),
+            ticker: item.ticker ?? "???",
+            type: (item.asset_type ?? item.type ?? "Stock") as "Stock" | "ETF",
+            priority: (item.priority ?? "Medium") as "High" | "Medium" | "Low",
+            price: Number(item.price ?? 0),
+            change: Number(item.change ?? 0),
+            volume: item.volume ?? "-",
+            relStrength: Number(item.rel_strength ?? item.relStrength ?? 1.0),
+            signal: (item.signal ?? "WAIT") as WatchlistItem["signal"],
+          }));
+          setItems(mapped);
+        } else {
+          setItems([]);
+        }
+      })
+      .catch(() => {
+        if (active) setItems([]);
+      });
+    return () => {
+      active = false;
+    };
+  }, [refreshKey]);
 
   const addItem = async () => {
     if (!newTicker) return;
@@ -172,7 +172,7 @@ export default function WatchlistPage() {
         </div>
         
         <div className="w-32">
-          <Select value={newPriority} onValueChange={(val: any) => setNewPriority(val)}>
+          <Select value={newPriority} onValueChange={(val) => setNewPriority(val as "High" | "Medium" | "Low")}>
             <SelectTrigger className="h-10 bg-muted/30 border-border text-[10px] font-bold uppercase tracking-widest">
               <SelectValue />
             </SelectTrigger>

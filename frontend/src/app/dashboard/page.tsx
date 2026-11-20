@@ -1,25 +1,58 @@
 "use client";
 
-import { 
-  TrendingUp, 
+import {
+  TrendingUp,
   TrendingDown,
-  CheckCircle2, 
-  Wallet, 
+  CheckCircle2,
+  Wallet,
   Activity,
   Zap,
   Trophy,
   Target,
   BarChart3,
   ShieldAlert,
-  ArrowDownRight, 
-  ArrowUpRight, 
-  Clock, 
-  Terminal 
+  Terminal
 } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-import { api, getWsBaseUrl } from "@/lib/api";
+import type { LucideIcon } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { api } from "@/lib/api";
 import { useWebSocket } from "@/hooks/use-websocket";
+import { useWsUrl } from "@/hooks/use-ws-url";
+import type { SignalPayload, WsMessage } from "@/types/ws";
 import { cn } from "@/lib/utils";
+
+interface ApiTrade {
+  id: number | string;
+  ticker: string;
+  strategy_name?: string;
+  status: string;
+  paper_entry_price?: number;
+  current_price?: number;
+  paper_exit_price?: number;
+  pnl_percent?: number;
+  pnl_dollar?: number;
+  exit_reason?: string;
+}
+
+interface TradeRow {
+  id: number | string;
+  ticker: string;
+  strategy: string;
+  status: string;
+  entry: number;
+  current: number;
+  exit: number;
+  pl_pct: number;
+  pl_usd: number;
+  exit_reason: string;
+}
+
+interface TradeSummary {
+  winRate?: number;
+  closedTrades?: number;
+  wins?: number;
+  losses?: number;
+}
 
 function formatCompactCurrency(value: number) {
   if (Math.abs(value) >= 1e6) {
@@ -45,52 +78,21 @@ export default function DashboardPage() {
     losses: 0,
   });
   const [initialBalance, setInitialBalance] = useState<number | null>(null);
-  const [liveSignals, setLiveSignals] = useState<any[]>([]);
-  const [openTrades, setOpenTrades] = useState<any[]>([]);
-  const [closedTrades, setClosedTrades] = useState<any[]>([]);
+  const [liveSignals, setLiveSignals] = useState<SignalPayload[]>([]);
+  const [openTrades, setOpenTrades] = useState<TradeRow[]>([]);
+  const [closedTrades, setClosedTrades] = useState<TradeRow[]>([]);
   const [lastTradeResult, setLastTradeResult] = useState<"win" | "loss" | null>(null);
   const [riskSettings, setRiskSettings] = useState({ leverage: 15, risk_per_trade: 0.05 });
   const prevBalanceRef = useRef<number | null>(null);
 
-  const [wsUrl, setWsUrl] = useState<string>("");
-  const { lastMessage, isConnected } = useWebSocket(wsUrl);
+  const wsUrl = useWsUrl();
 
-  useEffect(() => {
-    setWsUrl(getWsBaseUrl());
-  }, []);
-
-  useEffect(() => {
-    if (!lastMessage) return;
-    
-    if (lastMessage.type === "PORTFOLIO_UPDATE") {
-      const nl = lastMessage.payload.net_liquidity;
-      setInitialBalance(prev => {
-        const init = prev !== null ? prev : nl;
-        const prevBal = prevBalanceRef.current !== null ? prevBalanceRef.current : nl;
-        prevBalanceRef.current = nl;
-        if (nl > prevBal + 10) setLastTradeResult("win");
-        else if (nl < prevBal - 10) setLastTradeResult("loss");
-        setTimeout(() => setLastTradeResult(null), 600);
-        
-        setStats(s => ({ ...s, currentBalance: nl, totalReturn: init > 0 ? ((nl - init) / init) * 100 : 0 }));
-        return init;
-      });
-    } else if (lastMessage.type === "SIGNAL_GENERATED") {
-      setLiveSignals(prev => [lastMessage.payload, ...prev].slice(0, 50));
-    } else if (lastMessage.type === "PRICE_BATCH_UPDATE") {
-      setOpenTrades(prev => prev.map(trade => {
-        const q = lastMessage.payload[trade.ticker];
-        return (q?.price) ? { ...trade, current: q.price } : trade;
-      }));
-    } else if (lastMessage.type === "SYNC_TRIGGER" || lastMessage.type === "SIGNAL_GENERATED") {
-      fetchData();
-    }
-  }, [lastMessage]);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const [summary, trades, portfolio] = await Promise.all([
-        api.get("/paper-trades/summary"), api.get("/paper-trades/"), api.get("/user/portfolio")
+        api.get("/paper-trades/summary") as Promise<TradeSummary | null>,
+        api.get("/paper-trades/") as Promise<ApiTrade[] | null>,
+        api.get("/user/portfolio") as Promise<{ net_liquidity?: number } | null>,
       ]);
       if (summary) setStats(prev => ({ 
         ...prev, 
@@ -109,27 +111,55 @@ export default function DashboardPage() {
         });
       }
       if (trades) {
-        const mapped = trades.map((t: any) => ({
+        const mapped: TradeRow[] = trades.map((t) => ({
           id: t.id, ticker: t.ticker, strategy: t.strategy_name ?? "Turbo Scalp", status: t.status,
           entry: Number(t.paper_entry_price ?? 0), current: Number(t.current_price ?? t.paper_entry_price ?? 0),
           exit: Number(t.paper_exit_price ?? 0), pl_pct: Number(t.pnl_percent ?? 0),
           pl_usd: Number(t.pnl_dollar ?? 0), exit_reason: t.exit_reason ?? "",
         }));
-        setOpenTrades(mapped.filter((t: any) => t.status === "OPEN" || t.status === "PENDING_TRIGGER"));
-        setClosedTrades(mapped.filter((t: any) => t.status?.startsWith("CLOSED")));
+        setOpenTrades(mapped.filter((t) => t.status === "OPEN" || t.status === "PENDING_TRIGGER"));
+        setClosedTrades(mapped.filter((t) => t.status?.startsWith("CLOSED")));
       }
     } catch {}
-  };
+  }, []);
+
+  const handleMessage = useCallback((message: WsMessage) => {
+    if (message.type === "PORTFOLIO_UPDATE") {
+      const nl = message.payload.net_liquidity;
+      setInitialBalance(prev => {
+        const init = prev !== null ? prev : nl;
+        const prevBal = prevBalanceRef.current !== null ? prevBalanceRef.current : nl;
+        prevBalanceRef.current = nl;
+        if (nl > prevBal + 10) setLastTradeResult("win");
+        else if (nl < prevBal - 10) setLastTradeResult("loss");
+        setTimeout(() => setLastTradeResult(null), 600);
+        
+        setStats(s => ({ ...s, currentBalance: nl, totalReturn: init > 0 ? ((nl - init) / init) * 100 : 0 }));
+        return init;
+      });
+    } else if (message.type === "SIGNAL_GENERATED") {
+      setLiveSignals(prev => [message.payload, ...prev].slice(0, 50));
+    } else if (message.type === "PRICE_BATCH_UPDATE") {
+      setOpenTrades(prev => prev.map(trade => {
+        const q = message.payload[trade.ticker];
+        return (q?.price) ? { ...trade, current: q.price } : trade;
+      }));
+    } else if (message.type === "SYNC_TRIGGER") {
+      fetchData();
+    }
+  }, [fetchData]);
+
+  const { isConnected } = useWebSocket(wsUrl, handleMessage);
 
   useEffect(() => {
+    // Initial data load on mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchData();
     api.get("/settings/").then(res => { if (res) setRiskSettings(res); }).catch(() => {});
-  }, []);
+  }, [fetchData]);
 
   const baseBalance = initialBalance !== null ? initialBalance : 0;
   const totalPnlDollar = stats.currentBalance - baseBalance;
-  const wins = closedTrades.filter(t => t.pl_pct > 0).length;
-  const losses = closedTrades.filter(t => t.pl_pct <= 0).length;
   
   const grossProfit = closedTrades.filter(t => t.pl_pct > 0).reduce((sum, t) => sum + t.pl_pct, 0);
   const grossLoss = Math.abs(closedTrades.filter(t => t.pl_pct <= 0).reduce((sum, t) => sum + t.pl_pct, 0));
@@ -393,7 +423,7 @@ function Panel({ children, className }: { children: React.ReactNode; className?:
   return <div className={cn("bg-white/[0.02] border border-white/[0.06] rounded-xl p-4", className)}>{children}</div>;
 }
 
-function PanelHeader({ title, icon: Icon, count, accent }: { title: string; icon: any; count?: number; accent?: boolean }) {
+function PanelHeader({ title, icon: Icon, count, accent }: { title: string; icon: LucideIcon; count?: number; accent?: boolean }) {
   return (
     <div className="flex items-center justify-between mb-4">
       <div className="flex items-center gap-2">
@@ -432,7 +462,7 @@ function ProgressBar({ label, value, max, color }: { label: string; value: numbe
   );
 }
 
-function TH({ children, align = "left" }: any) {
+function TH({ children, align = "left" }: { children?: React.ReactNode; align?: "left" | "right" }) {
   return <th className={cn("px-4 py-3 text-[9px] font-black uppercase tracking-widest text-white/20", align === "right" && "text-right")}>{children}</th>;
 }
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Stock market research and paper-trading signal engine.",
 };
 
-import { TickerTape } from "@/components/layout/TickerTape";
+
 
 export default function RootLayout({
   children,

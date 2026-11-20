@@ -1,14 +1,25 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import type { WsMessage } from '@/types/ws';
 
 const RECONNECT_DELAY = 3000; // 3 seconds
 const MAX_RECONNECT_ATTEMPTS = 10;
 
-export function useWebSocket(url: string) {
-  const [lastMessage, setLastMessage] = useState<any>(null);
+/**
+ * Connects to `url` and reconnects with a capped backoff. Incoming messages are delivered to
+ * `onMessage` (kept in a ref so callers never need a stable callback) and also exposed as `lastMessage`.
+ */
+export function useWebSocket(url: string, onMessage?: (message: WsMessage) => void) {
+  const [lastMessage, setLastMessage] = useState<WsMessage | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
   const reconnectCount = useRef(0);
-  const reconnectTimer = useRef<NodeJS.Timeout | null>(null);
+  const reconnectTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const connectRef = useRef<() => void>(() => {});
+  const onMessageRef = useRef(onMessage);
+
+  useEffect(() => {
+    onMessageRef.current = onMessage;
+  }, [onMessage]);
 
   const connect = useCallback(() => {
     if (!url) return;
@@ -27,8 +38,9 @@ export function useWebSocket(url: string) {
 
       ws.onmessage = (event) => {
         try {
-          const data = JSON.parse(event.data);
+          const data = JSON.parse(event.data) as WsMessage;
           setLastMessage(data);
+          onMessageRef.current?.(data);
         } catch {
           // Silently ignore parse errors
         }
@@ -42,7 +54,7 @@ export function useWebSocket(url: string) {
         if (reconnectCount.current < MAX_RECONNECT_ATTEMPTS) {
           reconnectCount.current += 1;
           const delay = RECONNECT_DELAY * Math.min(reconnectCount.current, 3);
-          reconnectTimer.current = setTimeout(connect, delay);
+          reconnectTimer.current = setTimeout(() => connectRef.current(), delay);
         }
       };
 
@@ -57,6 +69,7 @@ export function useWebSocket(url: string) {
   }, [url]);
 
   useEffect(() => {
+    connectRef.current = connect;
     connect();
 
     return () => {
@@ -69,7 +82,7 @@ export function useWebSocket(url: string) {
     };
   }, [connect]);
 
-  const sendMessage = useCallback((message: any) => {
+  const sendMessage = useCallback((message: unknown) => {
     if (wsRef.current && isConnected) {
       wsRef.current.send(JSON.stringify(message));
     }

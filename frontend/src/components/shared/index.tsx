@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertTriangle, LucideIcon, Info, Clock, Activity } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { AlertTriangle, LucideIcon } from "lucide-react";
 
 type SignalType = "STRONG_BUY" | "BUY" | "BUY_IF_TRIGGER" | "WAIT" | "AVOID";
 
@@ -71,7 +71,7 @@ interface MetricCardProps {
   title: string;
   value: string | number;
   subValue?: string;
-  icon?: any;
+  icon?: LucideIcon;
   trend?: "up" | "down" | "neutral";
 }
 

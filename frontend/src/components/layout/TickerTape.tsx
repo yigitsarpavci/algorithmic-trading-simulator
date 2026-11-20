@@ -1,23 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useWebSocket } from "@/hooks/use-websocket";
-import { getWsBaseUrl } from "@/lib/api";
+import { useWsUrl } from "@/hooks/use-ws-url";
+import type { QuoteBatch, WsMessage } from "@/types/ws";
 
 export function TickerTape() {
-  const [prices, setPrices] = useState<Record<string, any>>({});
-  const [wsUrl, setWsUrl] = useState<string>("");
-  const { lastMessage } = useWebSocket(wsUrl);
+  const [prices, setPrices] = useState<QuoteBatch>({});
+  const wsUrl = useWsUrl();
 
-  useEffect(() => {
-    setWsUrl(getWsBaseUrl());
+  const handleMessage = useCallback((message: WsMessage) => {
+    if (message.type === "PRICE_BATCH_UPDATE") {
+      setPrices(prev => ({ ...prev, ...message.payload }));
+    }
   }, []);
 
-  useEffect(() => {
-    if (lastMessage?.type === "PRICE_BATCH_UPDATE") {
-      setPrices(prev => ({ ...prev, ...lastMessage.payload }));
-    }
-  }, [lastMessage]);
+  useWebSocket(wsUrl, handleMessage);
 
   const tickers = Object.keys(prices).filter(t => prices[t] && typeof prices[t].price === 'number');
 

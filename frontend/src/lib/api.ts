@@ -1,4 +1,5 @@
-const LOCAL_IP = "192.168.1.55";
+// Server-side fallback only; in the browser the page's own hostname is used.
+const LOCAL_IP = "localhost";
 
 export const getApiBaseUrl = () => {
   if (typeof window !== "undefined") {
@@ -30,7 +31,7 @@ export const api = {
     }
   },
 
-  async post(endpoint: string, data?: any) {
+  async post(endpoint: string, data?: unknown) {
     const baseUrl = getApiBaseUrl();
     try {
       const response = await fetch(`${baseUrl}${endpoint}`, {
