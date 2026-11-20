@@ -8,3 +8,4 @@ python-dotenv
 alembic
 yfinance
 pandas
+email-validator

@@ -3,7 +3,7 @@
 [![Security: CodeQL | Dependabot](https://img.shields.io/badge/Security-CodeQL%20%7C%20Dependabot%20%7C%20Secret%20scanning-success?logo=github)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/security)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/yigitsarpavci/algorithmic-trading-simulator/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/badge/coverage-59%25%20services-yellowgreen)](#testing)
+[![Coverage](https://img.shields.io/badge/coverage-60%25%20services-yellowgreen)](#testing)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js_16-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -24,6 +24,23 @@ DATABASE_URL=sqlite:///./alphatrigger.db uvicorn app.main:app --port 8000
 # frontend, in a second terminal
 cd frontend && npm ci && npm run dev   # http://localhost:3000
 ```
+
+---
+
+## Screenshots
+
+![Tour](docs/screenshots/tour.gif)
+
+| | |
+|---|---|
+| ![Dashboard: engine status, performance and trade history](docs/screenshots/dashboard.jpg) | ![Watchlist](docs/screenshots/watchlist.jpg) |
+| *Dashboard: engine status, performance and trade history* | *Watchlist* |
+| ![Risk control settings](docs/screenshots/settings.jpg) |  |
+| *Risk control settings* |  |
+
+---
+
+> Screenshots were captured against the default synthetic (unbiased random-walk) market feed, so the trade results shown are demonstration data, not a performance claim.
 
 ---
 
@@ -214,10 +231,13 @@ docker-compose up --build
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `BINANCE_API_KEY` | Optional | Required for live exchange execution |
-| `BINANCE_SECRET` | Optional | Encrypted secret for trade signing |
-| `DATABASE_URL` | ✅ | SQLite or PostgreSQL connection string |
-| `NEXT_PUBLIC_WS_URL` | ✅ | Backend WebSocket endpoint for Next.js |
+| `DATABASE_URL` | Optional | SQLAlchemy URL (e.g. `sqlite:///./alphatrigger.db`); falls back to PostgreSQL from `POSTGRES_*` |
+| `POSTGRES_SERVER` / `POSTGRES_USER` / `POSTGRES_PASSWORD` / `POSTGRES_DB` | Optional | Used when `DATABASE_URL` is not set |
+| `FRONTEND_CORS_ORIGINS` | Optional | Comma-separated browser origins allowed by the API (default: `localhost:3000`) |
+| `MARKET_DATA_PROVIDER` | Optional | `mock` (default, synthetic random-walk feed) or `yfinance` |
+| `OPENAI_API_KEY` | Optional | Enables the optional AI trade explainer |
+
+The frontend needs no environment variables; it derives the API/WebSocket address from the page host.
 
 ## Testing
 
@@ -227,7 +247,7 @@ pip install -r requirements.txt pytest
 PYTHONPATH=. python -m pytest tests -q --cov=app/services
 ```
 
-The 80-test suite covers position sizing and risk/reward validation, the indicators, the 6-factor signal scoring engine and its signal bands, the market-regime classifier, the risk-first exit state machine (hard stop, no-follow-through, break-even, trailing stop, target, 300s time stop) against an in-memory database, the global loss/cooldown limits and two strategies. Coverage of `app/services` is 59% (the paper-trading engine alone is 87%) and CI fails below 55%. GitHub Actions runs it together with a production Next.js build on every push.
+The 85-test suite covers position sizing and risk/reward validation, the indicators, the 6-factor signal scoring engine and its signal bands, the market-regime classifier, the risk-first exit state machine (hard stop, no-follow-through, break-even, trailing stop, target, 300s time stop) against an in-memory database, the global loss/cooldown limits and two strategies. Coverage of `app/services` is 60% (the paper-trading engine alone is 87%) and CI fails below 55%. GitHub Actions runs it together with a production Next.js build on every push.
 
 ## What I Learned
 

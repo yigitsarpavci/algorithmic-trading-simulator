@@ -5,7 +5,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import models
-from app.db.session import SessionLocal
+from app.db.session import SessionLocal, engine
+from app.db.init_db import init_db
 from app.services.paper_trading import paper_trading_service
 from app.core.config import settings
 from app.api.api_v1.api import api_router
@@ -305,6 +306,7 @@ async def trading_orchestrator():
 
 @app.on_event("startup")
 async def startup_event():
+    init_db(engine)  # fresh clones start with an empty database
     asyncio.create_task(trading_orchestrator())
 
 
